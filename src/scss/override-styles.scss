@@ -95,4 +95,38 @@ header {
 .pane-content {
   border: none;
   box-shadow: none;
+  background-color: transparent;
+}
+
+.panel-pane.paddle-color-palettes-subpalette-0 .pane-section-body {
+  background-color: transparent;
+}
+
+.paddle-layout-paddle_3_col_c > :first-child {
+  @include clearfix;
+
+  .pane-free-content {
+    margin-top: -100px;
+  }
+}
+
+.pane-free-content {
+  @include clearfix;
+  width: 100%;
+  display: block;
+  z-index: 9999;
+  position: relative;
+
+  .profile-img {
+    border: 5px solid #f9b919;
+  }
+
+  #profile-text {
+    margin-top: 80px;
+  }
+
+  .profile-img {
+    margin-right: 20px;
+    float: left;
+  }
 }
