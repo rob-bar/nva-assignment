@@ -1,0 +1,17 @@
+/// base colors
+//// @group Colors
+/// @type Color
+$colors: (
+  white: #FFF,
+  black: #000,
+  gray: #D2D2D2,
+  grid: #F00,
+  error: #F0062C,
+  success: #4DB51F,
+  nva: #f9ba19
+);
+
+/// base text-color
+//// @group Colors
+/// @type Color
+$text-color: map-get($colors, black);

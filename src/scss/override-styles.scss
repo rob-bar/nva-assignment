@@ -1,0 +1,98 @@
+// ====================================================================================================== //
+// OVERRIDE-STYLES.SCSS //
+// ====================================================================================================== //
+
+@charset "UTF-8";
+
+@import "bourbon";
+@import "utils/variables/*";
+@import "utils/mixins/*";
+@import "utils/functions/*";
+
+@import "base/typography";
+
+header {
+  background-color: #FFF;
+}
+
+#main-nav {
+  background-color: #FFF;
+}
+
+#block-paddle-menu-display-first-level .level-1 {
+  width: 100% !important;
+
+  > .menu-item {
+    border-color: #fff;
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+
+    &:hover {
+      border-color: color(white);
+      box-shadow: none;
+    }
+
+    &:after {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      height: 60%;
+      width: 2px;
+      background-color: color(nva);
+      content: "";
+    }
+
+    > a {
+      border-color: #fff;
+      color: #000;
+      font-family: "helveticanbc";
+      font-size: 1.467em;
+
+      &:hover {
+        color: color(nva);
+      }
+    }
+  }
+}
+
+#fake-menu-bg {
+  display: none;
+}
+
+.block-search-api-page {
+  .form-item {
+    float: right;
+    width: 100%;
+
+    @media screen and (min-width: 890px) {
+      width: auto;
+    }
+  }
+
+  input[type="text"] {
+    background-color: #f8f8f8;
+  }
+}
+
+.carousel {
+  .slider-counter,
+  .autoplay-control,
+  .flex-direction-nav {
+    display: none;
+  }
+}
+
+.pane-content {
+  border: none;
+  box-shadow: none;
+}

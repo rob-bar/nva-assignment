@@ -1,0 +1,57 @@
+{
+  "autoprefixer": [
+    "last 3 version",
+    "> 2%"
+  ],
+
+  "path": {
+    "bower": "bower_components/",
+    "fontAwesome": "font-awesome/scss",
+    "scss": "./src/scss",
+    "css": "./dist/css",
+    "js": "./dist/js",
+    "jade": "./src/jade",
+    "dist": "./dist",
+    "src": "./src"
+  },
+
+  "sass": {
+    "style": "expanded"
+  },
+
+  "favicons": {
+    "masterPicture": "./dist/img/logo/favicon.png",
+    "dest": "./dist/img/favicons/",
+    "iconsPath": "./dist/img/favicons/",
+    "design": {
+      "ios": {
+        "pictureAspect": "noChange"
+      },
+      "desktopBrowser": {},
+      "windows": {
+        "pictureAspect": "noChange",
+        "backgroundColor": "#da532c",
+        "onConflict": "override"
+      },
+      "androidChrome": {
+        "pictureAspect": "noChange",
+        "themeColor": "#ffffff",
+        "manifest": {
+          "name": "Jacket",
+          "display": "browser",
+          "orientation": "notSet",
+          "onConflict": "override"
+        }
+      },
+      "safariPinnedTab": {
+        "pictureAspect": "silhouette",
+        "themeColor": "#5bbad5"
+      }
+    },
+    "settings": {
+      "scalingAlgorithm": "Mitchell",
+      "errorOnImageTooSmall": false
+    },
+    "markupFile": "faviconData.json"
+  }
+}

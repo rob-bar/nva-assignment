@@ -1,0 +1,7 @@
+// ====================================================================================================== //
+// TYPOGRAPHY.SCSS //
+// This file contains all typography styling: body, h1..6, p, li, a, blockquote, etc.
+// ====================================================================================================== //
+
+@include font-face("helveticanbc", "http://demo.kanooh.be/f6a98/sites/default/files/atoms/files/HelveticaNeue-BoldCond", $file-formats: eot ttf woff);
+@include font-face("helveticanhc", "http://demo.kanooh.be/f6a98/sites/default/files/atoms/files/HelveticaNeue-HeavyCond", $file-formats: eot ttf woff);

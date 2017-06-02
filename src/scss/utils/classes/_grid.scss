@@ -1,0 +1,132 @@
+@for $i from 1 through $grid-columns {
+  .w#{$i} {
+    @include span-columns($i);
+
+    @each $bp, $val in $breakpoints {
+      &\@#{$bp} {
+        @include media(med($bp)) {
+          @include span-columns($i);
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .shift-right-#{$i} {
+    @include shift($i);
+
+    @each $bp, $val in $breakpoints {
+      &\@#{$bp} {
+        @include media(med($bp)) {
+          @include shift($i);
+        }
+      }
+    }
+  }
+
+  .shift-left-#{$i} {
+    @include shift(-($i));
+
+    @each $bp, $val in $breakpoints {
+      &\@#{$bp} {
+        @include media(med($bp)) {
+          @include shift(-($i));
+        }
+      }
+    }
+  }
+}
+
+.latest {
+  @include omega(auto);
+  float: right;
+
+  @each $bp, $val in $breakpoints {
+    &\@#{$bp} {
+      @include media(med($bp)) {
+        @include omega(auto);
+        float: right;
+      }
+    }
+  }
+}
+
+$grids: (1, 2, 3, 4, 5, 6);
+@each $i in $grids {
+  .grid-#{$i} {
+    @include grid($i);
+
+    @each $bp, $val in $breakpoints {
+      &\@#{$bp} {
+        @include media(med($bp)) {
+          @include grid($i);
+        }
+      }
+    }
+
+    $index: 0;
+    $length: length($breakpoints);
+    $keys: map-keys($breakpoints);
+
+    @each $bp, $val in $breakpoints {
+      @if($length > $index + 1) {
+        $index: $index + 1;
+        $plus: $index + 1;
+        $bp: nth($keys, $index);
+
+        @for $k from $plus through $length {
+          $bpn: nth($keys, $k);
+
+          &\@#{$bp}2#{$bpn} {
+            @include media(medi($bp, 1) medi($bp, 2) max-width (medi($bpn, 2) - 1)) {
+              @include grid($i);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .center-col-#{$i} {
+    @include span-columns($i of $grid-columns);
+    @include shift(($grid-columns - $i) / 2);
+
+    @each $bp, $val in $breakpoints {
+      &\@#{$bp} {
+        @include media(med($bp)) {
+          @include span-columns($i of $grid-columns);
+          @include shift(($grid-columns - $i) / 2);
+        }
+      }
+    }
+  }
+}
+
+.container {
+  @include padded-container(rh(.4));
+
+  @each $bp, $val in $breakpoints {
+    &\@#{$bp} {
+      @include media(med($bp)) {
+        @include padded-container(rh(mg($val, "padding")));
+      }
+    }
+  }
+}
+
+.row {
+  @include row();
+}
+
+.row-table {
+  @include row();
+  @include display-context(table);
+}
+
+
+.fullwidth {
+  @include fill-parent();
+}
