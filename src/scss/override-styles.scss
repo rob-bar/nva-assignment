@@ -109,6 +109,9 @@ header {
     margin-top: -100px;
   }
 }
+.flex-viewport {
+  height: 260px;
+}
 
 .pane-free-content {
   @include clearfix;
@@ -122,11 +125,104 @@ header {
   }
 
   #profile-text {
-    margin-top: 80px;
+    margin-top: 100px;
+
+    h2 {
+      margin-bottom: 0;
+      line-height: 30px;
+    }
+
+    h4 {
+      font-size: 22px;
+    }
+
+    h2,
+    h4 {
+      font-family: "helveticanhc";
+    }
   }
 
   .profile-img {
     margin-right: 20px;
     float: left;
+  }
+}
+.paddle-layout-paddle_3_col_c > :nth-child(3) {
+  display: none;
+}
+
+.paddle-layout-paddle_3_col_c {
+  background-color: #f8f8f8;
+
+  > :nth-child(1) {
+    background-color: #FFF;
+  }
+
+  > :nth-child(2) {
+    background-color: #f8f8f8;
+    display: block;
+    @include clearfix;
+
+    &:before {
+      position: absolute;
+      width: 1000px;
+      height: 75%;
+      content: "";
+      background-color: #f8f8f8;
+      display: block;
+      left: -1000px;
+    }
+
+    &:after {
+      position: absolute;
+      width: 1000px;
+      height: 75%;
+      content: "";
+      background-color: #f8f8f8;
+      display: block;
+      right: -1000px;
+    }
+  }
+}
+
+.hide-overflow {
+  overflow: visible;
+}
+
+.panel-pane .pane-content .pane-section-top,
+.agenda-search-pane-title.pane-section-top {
+  background-color: transparent;
+  h2 {
+    padding: 20px 0;
+    @include typo("helveticanhc", 26, 32, #000, normal)
+    border-bottom: 2px solid #f9b919;
+  }
+}
+
+.panel-pane.paddle-color-palettes-subpalette-0 .pane-section-body,
+.panel-pane.paddle-color-palettes-subpalette-0 .pane-section-bottom {
+  background-color: transparent;
+
+  > a {
+    display: inline-block;
+    text-align: left;
+    padding: 10px;
+    background-color: #f9b919;
+    color: #FFF;
+    float: none;
+    display: inline-block;
+    font-family: "helveticanbc";
+    font-style: normal;
+    text-transform: uppercase;
+    border-radius: 3px;
+
+    &:before {
+      @include icon("\f0c9");
+      margin-right: 10px;;
+    }
+
+    .fa-chevron-right {
+      display: none;
+    }
   }
 }
