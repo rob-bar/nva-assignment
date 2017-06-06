@@ -384,5 +384,13 @@ Lambermontstraat 2<br />
       </div>
     </div>
   </footer>
+  <script>
+    jQuery('.list-news-item .thumbnail img').each(
+     function( index ) {
+       var new_src =  jQuery(this).attr("src").replace('/styles/paddle_news_thumbnail/public','');
+         jQuery(this).attr("src",new_src);
+     }
+  )
+  </script>
   <div id="paddle-preview-toolbar"><div id="paddle-preview-toolbar-content" class="paddingizer" data-language="nl"><div id="paddle-preview-toolbar-admin-home"><a href="/f6a98/admin" title="Dashboard"><span>Dashboard</span></a></div><div id="paddle-preview-toolbar-theme-switcher"><div id="paddle-preview-toolbar-close-btn"><a href="/f6a98/admin/content_manager/node/1/view" title="Preview sluiten" class="edit"><span>Edit Page</span></a></div></div><div id="paddle-preview-toolbar-user">Robbie</div></div></div></body>
 </html>
